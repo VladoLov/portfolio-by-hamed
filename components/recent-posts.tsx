@@ -6,7 +6,7 @@ import { getPosts } from '@/lib/posts'
 export default async function RecentPosts() {
   const posts = await getPosts(4)
   return (
-    <section className='pb-24'>
+    <section className='pb-24 pt-24'>
       <div>
         <h2 className='title mb-12'>Recent Posts</h2>
         <Posts posts={posts} />
