@@ -1,0 +1,39 @@
+---
+title: 'Creating Interactive Components with MDX'
+summary: 'Learn how to build interactive components using MDX and React.'
+image: '/posts/posts.jpg.jpg'
+author: 'Vladislav Lovric'
+publishedAt: '2024-10-15'
+---
+
+# Creating Interactive Components with MDX
+
+![Interactive Components]
+
+**Author:** Vladislav Lovric  
+**Published On:** 2024-10-15
+
+MDX enables you to incorporate interactive React components into your Markdown.
+This post will guide you through creating and using these components
+effectively.
+
+## 1. Define Your Components
+
+First, create a reusable interactive component. Here’s an example of a toggle
+button:
+
+```jsx
+import { useState } from 'react'
+
+const ToggleButton = () => {
+  const [isToggled, setIsToggled] = useState(false)
+
+  return (
+    <button onClick={() => setIsToggled(!isToggled)}>
+      {isToggled ? 'On' : 'Off'}
+    </button>
+  )
+}
+
+export default ToggleButton
+```

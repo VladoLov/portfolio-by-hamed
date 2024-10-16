@@ -1,0 +1,31 @@
+---
+title: 'Optimizing Performance in MDX'
+summary: 'Best practices for optimizing the performance of your MDX content.'
+image: '/posts/posts.jpg.jpg'
+author: 'Vladislav Lovric'
+publishedAt: '2024-10-17'
+---
+
+# Optimizing Performance in MDX
+
+![Performance Optimization]
+
+**Author:** Vladislav Lovric  
+**Published On:** 2024-10-17
+
+Performance is crucial for user experience. In this post, we will look at
+several strategies to optimize your MDX content.
+
+## 1. Code Splitting
+
+Ensure that you split your code effectively to reduce the initial load time:
+
+```javascript
+import dynamic from 'next/dynamic'
+
+const DynamicComponent = dynamic(() => import('../components/MyComponent'))
+
+export default function Page() {
+  return <DynamicComponent />
+}
+```

@@ -1,0 +1,37 @@
+---
+title: 'Implementing Dark Mode in Web Applications'
+summary:
+  'A guide to adding dark mode functionality to your web apps using CSS and
+  JavaScript.'
+image: '/projects/project4.jpg'
+author: 'Carol White'
+publishedAt: '2024-10-17'
+---
+
+# Adding Dark Mode to Your Web App
+
+![Dark Mode](https://example.com/dark-mode-image.jpg)
+
+**Author:** Carol White  
+**Published On:** 2024-10-17
+
+Dark mode has become increasingly popular among users, enhancing the browsing
+experience, especially in low-light environments. This post will guide you
+through implementing dark mode in your web applications.
+
+## 1. Using CSS Variables
+
+CSS variables make it easy to switch between light and dark themes. Here’s how
+to define them:
+
+```css
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+.dark-mode {
+  --background-color: black;
+  --text-color: white;
+}
+```
