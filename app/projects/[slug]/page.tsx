@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-export async function generateStaticsParams() {
+export async function generateStaticParams() {
   const projects = await getProjects()
   const slug = projects.map(project => ({ slug: project.slug }))
 
@@ -50,7 +50,7 @@ export default async function Project({
         )}
         <header>
           <h1 className='title'>{title}</h1>
-          <p className='text-muted-foreground mt-3 text-xs'>
+          <p className='mt-3 text-xs text-muted-foreground'>
             {author} / {formatDate(publishedAt ?? '')}
           </p>
         </header>

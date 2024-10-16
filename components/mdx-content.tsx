@@ -1,23 +1,38 @@
 import { MDXProps } from 'mdx/types'
 import { highlight } from 'sugar-high'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote/rsc'
 import Counter from './counter'
+import { MDXComponents } from 'mdx/types'
 
-function Code({ children, ...props }: any) {
-  let codeHTML = highlight(children)
+interface CodeProps extends React.ComponentPropsWithoutRef<'code'> {
+  children?: React.ReactNode
+}
+
+const Code: React.FC<CodeProps> = ({ children, ...props }) => {
+  const codeHTML = typeof children === 'string' ? highlight(children) : ''
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
-const components = {
+const components: MDXComponents = {
   code: Code,
   Counter
 }
 
-export default function MDXContent(props: JSX.IntrinsicAttributes & MDXProps) {
+interface MDXContentProps extends Omit<MDXProps, 'components'> {
+  source: MDXRemoteSerializeResult | string
+  components?: MDXComponents
+}
+
+export default function MDXContent({
+  source,
+  components: userComponents,
+  ...props
+}: MDXContentProps) {
   return (
     <MDXRemote
       {...props}
-      components={{ ...components, ...(props.components || {}) }}
+      source={source}
+      components={{ ...components, ...(userComponents || {}) }}
     />
   )
 }
