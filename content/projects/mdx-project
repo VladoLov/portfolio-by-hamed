@@ -1,0 +1,28 @@
+---
+title: "Exploring React Server Components"
+summary: "React Server Components allow developers to build fast, scalable applications by rendering components on the server."
+image: "/author/server-components.jpg"
+author: "John Doe"
+publishedAt: "2024-10-14"
+---
+
+# Unlocking the Power of React Server Components
+
+![React Server Components](https://example.com/server-components-image.jpg)
+
+**Author:** John Doe  
+**Published On:** 2024-10-14
+
+React Server Components (RSC) enable server-side rendering of components, allowing for faster and more efficient web applications. This post dives into how they work and how you can leverage them in your projects.
+
+## 1. What Are Server Components?
+
+React Server Components enable the execution of component logic on the server, providing significant performance improvements by offloading rendering tasks from the client.
+
+For instance, here's a simple component example that gets rendered on the server:
+
+```jsx
+// Example of a server component
+export default function ServerGreeting() {
+  return <h1>Hello from the Server!</h1>;
+}
