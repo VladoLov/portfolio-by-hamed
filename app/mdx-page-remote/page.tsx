@@ -3,7 +3,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 export default async function RemoteMdxPage() {
   try {
     // Replace with the actual URL
-    const res = await fetch('https://portfolio-by-hamed.vercel.app/')
+    const res = await fetch(
+      'https://portfolio-by-hamed.vercel.app/api/markdown'
+    )
 
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`)
