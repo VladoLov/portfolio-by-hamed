@@ -1,0 +1,200 @@
+---
+title: 'Overview of destructuring in JavaScript'
+summary:
+  'These are modern JavaScript features that make working with objects, arrays,
+  and strings much easier and more expressive.'
+image: '/posts/posts.jpg.'
+author: 'Vladislav Lovric'
+publishedAt: '2024-10-24'
+---
+
+### Destructuring, Template Literals, Spread, and Rest Operators in JavaScript
+
+These are modern JavaScript features that make working with objects, arrays, and
+strings much easier and more expressive.
+
+---
+
+### 1. **Destructuring**
+
+Destructuring allows you to unpack values from arrays or properties from objects
+into distinct variables.
+
+#### **Array Destructuring**
+
+You can extract values from arrays and assign them to variables in a single
+step.
+
+```javascript
+const fruits = ['apple', 'banana', 'orange']
+
+// Destructuring array
+const [first, second] = fruits
+
+console.log(first) // 'apple'
+console.log(second) // 'banana'
+```
+
+#### **Object Destructuring**
+
+Similarly, you can unpack properties from objects.
+
+```javascript
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+}
+
+// Destructuring object
+const { name, age } = person
+
+console.log(name) // 'John'
+console.log(age) // 30
+```
+
+---
+
+### 2. **Template Literals**
+
+Template literals provide an easy way to interpolate variables and expressions
+into strings, using backticks (\`\`) instead of regular quotes.
+
+#### **Basic Example**
+
+```javascript
+const name = 'Alice'
+const age = 25
+
+// Using template literals
+const greeting = `Hello, my name is ${name} and I am ${age} years old.`
+
+console.log(greeting)
+// Output: "Hello, my name is Alice and I am 25 years old."
+```
+
+#### **Multi-line Strings**
+
+With template literals, you can easily create multi-line strings.
+
+```javascript
+const message = `This is a message
+that spans multiple lines.`
+
+console.log(message)
+// Output:
+// "This is a message
+// that spans multiple lines."
+```
+
+---
+
+### 3. **Spread Operator (`...`)**
+
+The spread operator allows you to expand an iterable (like an array or object)
+into individual elements.
+
+#### **Spread with Arrays**
+
+You can use the spread operator to copy or combine arrays.
+
+```javascript
+const arr1 = [1, 2, 3]
+const arr2 = [4, 5, 6]
+
+// Combine arrays
+const combined = [...arr1, ...arr2]
+
+console.log(combined) // [1, 2, 3, 4, 5, 6]
+```
+
+#### **Spread with Objects**
+
+The spread operator can also copy or merge objects.
+
+```javascript
+const obj1 = { a: 1, b: 2 }
+const obj2 = { b: 3, c: 4 }
+
+// Merge objects
+const mergedObj = { ...obj1, ...obj2 }
+
+console.log(mergedObj) // { a: 1, b: 3, c: 4 }
+```
+
+#### **Cloning Objects**
+
+```javascript
+const original = { name: 'Alice', age: 25 }
+const copy = { ...original }
+
+console.log(copy) // { name: 'Alice', age: 25 }
+```
+
+---
+
+### 4. **Rest Operator (`...`)**
+
+The rest operator looks exactly like the spread operator (`...`), but it is used
+to **collect** the remaining elements or properties into a new array or object.
+
+#### **Rest with Function Parameters**
+
+It allows you to pass a variable number of arguments to a function.
+
+```javascript
+function sum(...numbers) {
+  return numbers.reduce((total, number) => total + number, 0)
+}
+
+console.log(sum(1, 2, 3)) // 6
+console.log(sum(4, 5, 6, 7)) // 22
+```
+
+#### **Rest with Destructuring**
+
+You can use the rest operator to capture the remaining elements in an array or
+properties in an object.
+
+##### **Array Example**
+
+```javascript
+const [first, ...rest] = [1, 2, 3, 4, 5]
+
+console.log(first) // 1
+console.log(rest) // [2, 3, 4, 5]
+```
+
+##### **Object Example**
+
+```javascript
+const person = { name: 'Alice', age: 25, city: 'New York' }
+const { name, ...rest } = person
+
+console.log(name) // 'Alice'
+console.log(rest) // { age: 25, city: 'New York' }
+```
+
+---
+
+### Key Differences between **Spread** and **Rest**:
+
+- **Spread** expands an array or object into individual elements or properties.
+  - Example: `const arr = [...oldArr];`
+- **Rest** collects multiple elements or properties into a new array or object.
+  - Example: `const [first, ...rest] = arr;`
+
+---
+
+### Summary:
+
+- **Destructuring**: Extracts values from arrays or objects into variables.
+- **Template Literals**: Provides an easy way to create strings with variable
+  interpolation and multi-line formatting.
+- **Spread Operator (`...`)**: Expands arrays or objects into individual
+  elements or properties.
+- **Rest Operator (`...`)**: Collects remaining elements or properties into an
+  array or object.
+
+These features make your JavaScript code more concise, readable, and easier to
+manage!

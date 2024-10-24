@@ -1,0 +1,294 @@
+---
+title: 'Overview of basic arrays in JavaScript'
+summary: 'Learn basic arrays, maps, filet and forEach in JavaScript.'
+image: '/posts/posts.jpg.'
+author: 'Vladislav Lovric'
+publishedAt: '2024-10-24'
+---
+
+Here’s an overview of common **JavaScript array methods** like `map()`,
+`forEach()`, `filter()`, and others, along with examples:
+
+---
+
+### 1. **`forEach()`**
+
+- Executes a provided function once for each array element.
+- **Does not** return a new array.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+numbers.forEach(num => {
+  console.log(num * 2)
+})
+// Output: 2, 4, 6, 8, 10
+```
+
+---
+
+### 2. **`map()`**
+
+- Creates a **new array** populated with the results of calling a provided
+  function on every element in the array.
+- **Returns** the transformed array.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+const doubled = numbers.map(num => num * 2)
+console.log(doubled) // [2, 4, 6, 8, 10]
+```
+
+---
+
+### 3. **`filter()`**
+
+- Creates a **new array** with all elements that pass the test implemented by
+  the provided function.
+- **Returns** the filtered array.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+const evenNumbers = numbers.filter(num => num % 2 === 0)
+console.log(evenNumbers) // [2, 4]
+```
+
+---
+
+### 4. **`find()`**
+
+- Returns the **first** element in the array that satisfies the provided testing
+  function.
+- **Returns** the element, or `undefined` if no element passes the test.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+const firstEven = numbers.find(num => num % 2 === 0)
+console.log(firstEven) // 2
+```
+
+---
+
+### 5. **`reduce()`**
+
+- Executes a reducer function on each element of the array, resulting in a
+  **single output value**.
+- **Returns** the accumulated result.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+const sum = numbers.reduce((acc, current) => acc + current, 0)
+console.log(sum) // 15
+```
+
+---
+
+### 6. **`some()`**
+
+- Tests whether **at least one** element in the array passes the test
+  implemented by the provided function.
+- **Returns** `true` or `false`.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+const hasEven = numbers.some(num => num % 2 === 0)
+console.log(hasEven) // true
+```
+
+---
+
+### 7. **`every()`**
+
+- Tests whether **all** elements in the array pass the test implemented by the
+  provided function.
+- **Returns** `true` or `false`.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+const allEven = numbers.every(num => num % 2 === 0)
+console.log(allEven) // false
+```
+
+---
+
+### 8. **`sort()`**
+
+- Sorts the elements of an array **in place** and returns the sorted array.
+- Modifies the original array.
+
+#### Example:
+
+```javascript
+const numbers = [3, 1, 4, 1, 5, 9]
+
+numbers.sort((a, b) => a - b) // Ascending order
+console.log(numbers) // [1, 1, 3, 4, 5, 9]
+```
+
+---
+
+### 9. **`splice()`**
+
+- Changes the contents of an array by removing or replacing existing elements
+  and/or adding new elements **in place**.
+- Modifies the original array.
+
+#### Example:
+
+```javascript
+const fruits = ['apple', 'banana', 'cherry']
+
+fruits.splice(1, 1, 'mango') // Replaces "banana" with "mango"
+console.log(fruits) // ["apple", "mango", "cherry"]
+```
+
+---
+
+### 10. **`slice()`**
+
+- Returns a **shallow copy** of a portion of an array into a new array object.
+- **Does not** modify the original array.
+
+#### Example:
+
+```javascript
+const fruits = ['apple', 'banana', 'cherry', 'date']
+
+const newFruits = fruits.slice(1, 3) // Takes elements from index 1 to 3 (not including 3)
+console.log(newFruits) // ["banana", "cherry"]
+console.log(fruits) // ["apple", "banana", "cherry", "date"]
+```
+
+---
+
+### 11. **`concat()`**
+
+- Merges two or more arrays into a new array.
+- **Returns** a new array.
+
+#### Example:
+
+```javascript
+const arr1 = [1, 2, 3]
+const arr2 = [4, 5, 6]
+
+const merged = arr1.concat(arr2)
+console.log(merged) // [1, 2, 3, 4, 5, 6]
+```
+
+---
+
+### 12. **`includes()`**
+
+- Determines whether an array includes a certain value among its entries.
+- **Returns** `true` or `false`.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+const includesThree = numbers.includes(3)
+console.log(includesThree) // true
+```
+
+---
+
+### 13. **`push()` and `pop()`**
+
+- `push()`: Adds one or more elements to the **end** of the array and returns
+  the new length of the array.
+- `pop()`: Removes the **last** element from an array and returns that element.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3]
+
+numbers.push(4) // Adds 4 to the end
+console.log(numbers) // [1, 2, 3, 4]
+
+const lastNumber = numbers.pop() // Removes 4
+console.log(lastNumber) // 4
+console.log(numbers) // [1, 2, 3]
+```
+
+---
+
+### 14. **`shift()` and `unshift()`**
+
+- `shift()`: Removes the **first** element from an array and returns it.
+- `unshift()`: Adds one or more elements to the **beginning** of the array and
+  returns the new length.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3]
+
+numbers.unshift(0) // Adds 0 to the beginning
+console.log(numbers) // [0, 1, 2, 3]
+
+const firstNumber = numbers.shift() // Removes 0
+console.log(firstNumber) // 0
+console.log(numbers) // [1, 2, 3]
+```
+
+---
+
+### 15. **`join()`**
+
+- Joins all elements of an array into a string and returns this string.
+- You can specify a separator.
+
+#### Example:
+
+```javascript
+const words = ['Hello', 'World', 'JavaScript']
+
+const sentence = words.join(' ')
+console.log(sentence) // "Hello World JavaScript"
+```
+
+---
+
+### 16. **`reverse()`**
+
+- Reverses the order of the elements in the array **in place**.
+- Modifies the original array.
+
+#### Example:
+
+```javascript
+const numbers = [1, 2, 3]
+
+numbers.reverse()
+console.log(numbers) // [3, 2, 1]
+```
+
+---
+
+These are the most common JavaScript array methods that you can use for
+manipulating and working with arrays. Each method has different use cases
+depending on whether you want to transform, filter, or analyze the data in an
+array.

@@ -1,0 +1,220 @@
+---
+title:
+  'Overview of basic variables, operators, functions and objects in JavaScript'
+summary:
+  'Learn basic variables, operators, functions and objects in JavaScript.'
+image: '/posts/posts.jpg.'
+author: 'Vladislav Lovric'
+publishedAt: '2024-10-24'
+---
+
+Here's an overview of **basic variables**, **operators**, **functions**, and
+**objects** in JavaScript:
+
+---
+
+### 1. **Variables**
+
+In JavaScript, variables are containers for storing data values. There are three
+ways to declare variables:
+
+- `var`: older way of declaring variables, has function-scoped behavior.
+- `let`: newer, block-scoped (only accessible within the block it's declared).
+- `const`: for constant variables (cannot be reassigned), block-scoped.
+
+#### Example:
+
+```javascript
+var name = 'John' // Function-scoped variable
+let age = 30 // Block-scoped variable
+const country = 'USA' // Constant variable, cannot be reassigned
+
+// Variables declared but not assigned will be undefined
+let x
+console.log(x) // undefined
+```
+
+---
+
+### 2. **Operators**
+
+Operators allow you to perform operations on variables and values.
+
+#### Arithmetic Operators:
+
+- `+`: Addition
+- `-`: Subtraction
+- `*`: Multiplication
+- `/`: Division
+- `%`: Modulus (remainder)
+- `**`: Exponentiation
+
+#### Example:
+
+```javascript
+let a = 10
+let b = 20
+
+console.log(a + b) // 30
+console.log(b - a) // 10
+console.log(a * b) // 200
+console.log(b / a) // 2
+console.log(b % a) // 0
+console.log(2 ** 3) // 8
+```
+
+#### Comparison Operators:
+
+- `==`: Equal to (compares values, not types)
+- `===`: Strict equal (compares values and types)
+- `!=`: Not equal to
+- `!==`: Strict not equal
+- `>`: Greater than
+- `<`: Less than
+- `>=`: Greater than or equal to
+- `<=`: Less than or equal to
+
+#### Example:
+
+```javascript
+let x = 5
+let y = '5'
+
+console.log(x == y) // true (because values are equal)
+console.log(x === y) // false (because types are different)
+console.log(x > 3) // true
+console.log(x !== y) // true (different type and value)
+```
+
+#### Logical Operators:
+
+- `&&`: Logical AND
+- `||`: Logical OR
+- `!`: Logical NOT
+
+#### Example:
+
+```javascript
+let x = true
+let y = false
+
+console.log(x && y) // false
+console.log(x || y) // true
+console.log(!x) // false
+```
+
+#### Assignment Operators:
+
+- `=`: Assignment
+- `+=`, `-=`, `*=`, `/=`, `%=`: Assignment with operation
+
+#### Example:
+
+```javascript
+let num = 10
+num += 5 // num is now 15
+console.log(num) // 15
+```
+
+---
+
+### 3. **Functions**
+
+A function is a block of code designed to perform a particular task. Functions
+are invoked (or called) when something calls it (like a button click or manually
+in the code).
+
+#### Basic Function:
+
+```javascript
+function greet(name) {
+  return 'Hello, ' + name
+}
+
+console.log(greet('Alice')) // "Hello, Alice"
+```
+
+#### Function Expression (Anonymous function):
+
+```javascript
+const multiply = function (a, b) {
+  return a * b
+}
+
+console.log(multiply(5, 3)) // 15
+```
+
+#### Arrow Functions (ES6):
+
+Arrow functions are a more concise syntax for writing functions.
+
+```javascript
+const add = (a, b) => a + b
+
+console.log(add(2, 3)) // 5
+```
+
+---
+
+### 4. **Objects**
+
+Objects are a collection of properties, where a property is an association
+between a name (key) and a value. The value of a property can be a function,
+which is then called a method.
+
+#### Creating an Object:
+
+```javascript
+let person = {
+  name: 'John', // Property
+  age: 30, // Property
+  greet: function () {
+    // Method
+    console.log('Hello, ' + this.name)
+  }
+}
+
+console.log(person.name) // "John"
+person.greet() // "Hello, John"
+```
+
+#### Accessing Object Properties:
+
+- Dot notation: `object.property`
+- Bracket notation: `object["property"]`
+
+```javascript
+console.log(person.age) // 30
+console.log(person['name']) // "John"
+```
+
+#### Adding/Modifying Properties:
+
+```javascript
+person.city = 'New York' // Adding a new property
+person.age = 31 // Modifying an existing property
+
+console.log(person.city) // "New York"
+console.log(person.age) // 31
+```
+
+#### Object Methods:
+
+Functions within objects are called methods.
+
+```javascript
+let car = {
+  brand: 'Toyota',
+  start: function () {
+    console.log(this.brand + ' is starting.')
+  }
+}
+
+car.start() // "Toyota is starting."
+```
+
+---
+
+This covers the **basics** of JavaScript variables, operators, functions, and
+objects! These concepts form the foundation for building more complex JavaScript
+programs.
