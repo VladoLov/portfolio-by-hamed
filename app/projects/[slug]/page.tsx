@@ -45,6 +45,8 @@ export default async function Project({
               alt={title || ''}
               className='object-cover'
               fill
+              width={400}
+              height={400}
             />
           </div>
         )}

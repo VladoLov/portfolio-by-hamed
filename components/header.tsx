@@ -22,7 +22,7 @@ export default function Header() {
             <Link href='/contact'>Contact</Link>
           </li>
         </ul>
-        <div>
+        <div className='pl-6 sm:pl-0'>
           <ThemeToggle />
         </div>
       </nav>
